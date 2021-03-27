@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/style.css">
+    <title>Future Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<!-- <body style="background-image: url('/src/bg/pexels-instawalli-176851.jpg');" class="bg-no-repeat bg-cover p-4 bg-black text-gray-400"> -->
+
+<body class="p-4 bg-gray-800 text-gray-400">
+
+
+    <!-- Titel/Menu -->
+    <div class="pb-4">
+        <ul class="flex flex-row space-x-4">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="flex flex-row md:flex-row sm:flex-col">
+        <!-- InfoBox1 -->
+        <div class="m-1 p-2 w-1/4 bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+            <div class="bg-blue-800 p-2 bg-opacity-25">
+                <div class="text-2xl">Frequency [ <span class="text-yellow-300">Z</span> ]</div>
+                <hr class="m-2">
+                <div>Spatial Output</div>
+                <div class="text-xs text-yellow-300">NF.63534-5</div>
+            </div>
+            <div>Dataset 39</div>
+            <img class="m-auto" src="/src/bg/chart.png" style="width:300;height:300px;" alt="Graph1">
+            <div class="text-yellow-300 text-xs">83187-Y</div>
+            <hr class="m-2">
+            <div class="text-xs text-yellow-300 text-opacity-50">44151-Y</div>
+            <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+        </div>
+
+        <!-- InfoBox2 -->
+        <div class="m-1 p-2 w-1/4 bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+            <div class="bg-blue-800 p-2 bg-opacity-25">
+                <div class="text-2xl">Pulse [ <span class="text-yellow-300">X-Y</span> ]</div>
+                <hr class="m-2">
+                <div>Spatial Output</div>
+                <div class="text-xs text-yellow-300">NF.63534-5</div>
+            </div>
+            <div>Dataset 74</div>
+            <img class="m-auto" src="/src/bg/chart.png" style="width:300;height:300px;" alt="Graph1">
+            <div class="text-yellow-300 text-xs">83187-E</div>
+            <hr class="m-2">
+            <div class="text-xs text-yellow-300 text-opacity-50">44151-C</div>
+            <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+        </div>
+
+        <!-- InfoBox3 -->
+        <div class="m-1 p-2 w-2/4 bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+            <div class="bg-blue-800 p-2 bg-opacity-25">
+                <div class="text-2xl">Q-Vehicle Part [ <span class="text-yellow-300">v2.0004</span> ]</div>
+                <hr class="m-2">
+                <div>Spatial Output</div>
+                <div class="text-xs text-yellow-300">NF.63534-5</div>
+            </div>
+            <div>Dataset 74</div>
+            <img class="m-auto" src="/src/bg/graphlong.png" style="width:600px;height:300px;" alt="Graph1">
+            <div class="text-yellow-300 text-xs">83187-E</div>
+            <hr class="m-2">
+            <div class="text-xs text-yellow-300 text-opacity-50">44151-C</div>
+            <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+        </div>
+    </div>
+
+    <!-- InfoBox4 -->
+    <div class="m-1 p-2 w-full bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+        <div class="bg-blue-800 p-2 bg-opacity-25">
+            <div class="text-2xl">Q-Vehicle Part [ <span class="text-yellow-300">v2.0004</span> ]</div>
+            <hr class="m-2">
+            <div>Spatial Output</div>
+            <div class="text-xs text-yellow-300">NF.63534-5</div>
+        </div>
+        <div>Dataset 74</div>
+        <img class="m-auto" src="/src/bg/graphlong.png" style="width:auto;height:200px;" alt="Graph1">
+        <div class="text-yellow-300 text-xs">83187-E</div>
+        <hr class="m-2">
+        <div class="text-xs text-yellow-300 text-opacity-50">44151-C</div>
+        <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+    </div>
+
+<div class="flex flex-row">
+    <!-- chart.js implementation 1 -->
+    <div class="m-1 p-2 w-2/4 bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+        <div class="bg-blue-800 p-2 bg-opacity-25">
+            <div class="text-2xl">My First Dataset [ <span class="text-yellow-300">v2.0004</span> ]</div>
+            <hr class="m-2">
+            <div>Spatial Output</div>
+            <div class="text-xs text-yellow-300">NF.63534-5</div>
+        </div>
+        <div>Dataset 74</div>
+        <!-- Chart --> 
+        <canvas id="myChart1">
+            <script>
+                var ctx = document.getElementById('myChart1').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [0, 10, 5, 2, 20, 30, 45]
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {}
+                });
+            </script>
+        </canvas>
+        <div class="text-yellow-300 text-xs">83187-E</div>
+        <hr class="m-2">
+        <div class="text-xs text-yellow-300 text-opacity-50">44151-C</div>
+        <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+    </div>
+
+
+        <!-- chart.js implementation 2 -->
+        <div class="m-1 p-2 w-2/4 bg-blue-500 hover:bg-opacity-30 bg-opacity-25">
+            <div class="bg-blue-800 p-2 bg-opacity-25">
+                <div class="text-2xl">Second Dataset & Chart [ <span class="text-yellow-300">v2.0004</span> ]</div>
+                <hr class="m-2">
+                <div>Spatial Output</div>
+                <div class="text-xs text-yellow-300">NF.63534-5</div>
+            </div>
+            <div>Dataset 74</div>
+            <!-- Chart -->
+            <canvas id="myChart2">
+                <script>
+                    var ctx = document.getElementById('myChart2').getContext('2d');
+                    var chart = new Chart(ctx, {
+                        // The type of chart we want to create
+                        type: 'line',
+    
+                        // The data for our dataset
+                        data: {
+                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                            datasets: [{
+                                label: 'My Second dataset',
+                                // backgroundColor: 'rgb(255, 99, 132)',
+                                borderColor: 'rgb(255, 99, 132)',
+                                data: [10, 5, 2, 20, 30, 45, 15]
+                            }]
+                        },
+    
+                        // Configuration options go here
+                        options: {}
+                    });
+                </script>
+            </canvas>
+            <div class="text-yellow-300 text-xs">83187-E</div>
+            <hr class="m-2">
+            <div class="text-xs text-yellow-300 text-opacity-50">44151-C</div>
+            <div class="text-xs text-gray-200">[1] - 0948109.311 452.097.931 4.1526435.11</div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
